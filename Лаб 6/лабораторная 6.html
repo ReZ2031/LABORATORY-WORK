@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+	
+ <input type=button value="Кликните, чтобы увидеть форму" id="showbutton" onclick = formy()>	
+ <form onsubmit="alerty()" id="form"></form>
+	
+	<script>
+	function formy() {
+	showbutton.onclick = null;
+ 
+ 	form.innerHTML += "<br><br>" + "Ваше ФИО: " + "<br>";
+ 	let input0 = document.createElement("input");
+ 	input0.type = "text";
+ 	form.append(input0);
+ 	
+ 	form.innerHTML += "<br><br>" + "Город проживания: " + "<br>";
+ 	let input1 = document.createElement("input");
+ 	input1.type = "text";
+ 	form.append(input1);
+ 	
+ 	form.innerHTML += "<br><br>" + "Ваш возраст: " + "<br>";
+ 	let input2 = document.createElement("input");
+ 	input2.type = "number";
+ 	form.append(input2);
+ 	
+ 	form.innerHTML += "<br><br><br>";
+ 	let input3 = document.createElement("input");
+ 	input3.type = "submit";
+ 	form.append(input3);
+
+ };
+ 
+ function alerty() {
+ 	if (document.forms[0].elements[0].value) {alert(document.forms[0].elements[0].value)} else {alert("Заполните первое поле")};
+ 	if (document.forms[0].elements[1].value) {alert(document.forms[0].elements[1].value)} else {alert("Заполните второе поле")};
+ 	if (document.forms[0].elements[2].value) {alert(document.forms[0].elements[2].value)} else {alert("Заполните третье поле")};
+ };
+		</script>
+	</body>
+</html>
